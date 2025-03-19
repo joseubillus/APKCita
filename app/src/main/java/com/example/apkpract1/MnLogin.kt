@@ -32,7 +32,7 @@ class MnLogin : AppCompatActivity() {
             val usu=txtusu.text.toString()
             val pas=txtpas.text.toString()
             if(usu.equals("senati") && pas.equals("123"))
-                startActivity(Intent(this,MnMenu::class.java))
+                startActivity(Intent(this,MnPaciente::class.java))
             else
                 Toast.makeText(this,"Error en credenciales",Toast.LENGTH_LONG).show()
         })
