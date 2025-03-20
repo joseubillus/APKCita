@@ -10,7 +10,7 @@ import com.example.apkpract1.R
 import com.example.modelo.Paciente
 
 class ADPPaciente: BaseAdapter {
-    private lateinit var BD:ArrayList<Paciente>
+    private var BD:ArrayList<Paciente> = ArrayList()
     private val ct:Context
 
     constructor(c:Context){

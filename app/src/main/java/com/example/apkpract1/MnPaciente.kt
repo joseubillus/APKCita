@@ -25,8 +25,9 @@ class MnPaciente : AppCompatActivity() {
 
         lstpac = findViewById(R.id.FrmPac_lstpac)
         var adp = ADPPaciente(this)
-        adp.getAdd(Paciente(
-            "PA001","JOSE","TIZNADO",9898545,""))
+        for (i in 0..500) {
+            adp.getAdd(Paciente("PA00"+i, "JOSE", "TIZNADO", 9898545, ""))
+        }
         lstpac.adapter = adp
     }
 }
