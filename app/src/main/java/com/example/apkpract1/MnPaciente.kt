@@ -7,11 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.controlador.DPaciente
 import com.example.modelo.Paciente
 import com.example.util.ADPPaciente
 
 class MnPaciente : AppCompatActivity() {
     private lateinit var lstpac:ListView
+    private lateinit var dpac:DPaciente
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +26,8 @@ class MnPaciente : AppCompatActivity() {
         }
 
         lstpac = findViewById(R.id.FrmPac_lstpac)
-        var adp = ADPPaciente(this)
-        for (i in 0..500) {
-            adp.getAdd(Paciente("PA00"+i, "JOSE", "TIZNADO", 9898545, ""))
-        }
-        lstpac.adapter = adp
+        dpac = DPaciente(this)
+        dpac.lst = lstpac
+        dpac.getList("")
     }
 }
