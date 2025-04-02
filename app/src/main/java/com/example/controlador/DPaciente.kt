@@ -13,7 +13,7 @@ import org.json.JSONObject
 
 class DPaciente(var c:Context) {
     private var asyn:AsyncHttpClient = AsyncHttpClient()
-    private var url:String = "http://172.56.0.22:8000/pacientes/";
+    private var url:String = "http://172.56.1.82:8000/pacientes/";
     private var array:ArrayList<Paciente> = ArrayList()
     lateinit var lst:ListView
 
