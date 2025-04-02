@@ -10,11 +10,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.controlador.DUsuario
 
 class MnLogin : AppCompatActivity() {
     private lateinit var txtusu: EditText
     private lateinit var txtpas:EditText
     private lateinit var btnacep:Button
+    private lateinit var dusu:DUsuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +33,8 @@ class MnLogin : AppCompatActivity() {
         btnacep.setOnClickListener(View.OnClickListener {
             val usu=txtusu.text.toString()
             val pas=txtpas.text.toString()
-            if(usu.equals("senati") && pas.equals("123"))
-                startActivity(Intent(this,MnPaciente::class.java))
-            else
-                Toast.makeText(this,"Error en credenciales",Toast.LENGTH_LONG).show()
+            dusu = DUsuario(this)
+            dusu.getVal(usu,pas)
         })
     }
 }
